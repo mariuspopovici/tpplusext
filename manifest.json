@@ -1,7 +1,7 @@
 {
 	"name": "TP+",
 	"version": "0.0.0.1",
-	"description": "TP+ enhances your favorite training log and analysis software by exporting workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
+	"description": "TP+ exports TP workout builder workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
 	"permissions": [
     "activeTab", "<all_urls>"
   ],
