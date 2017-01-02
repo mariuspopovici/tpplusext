@@ -16,6 +16,9 @@ if (groupsElements.length == 0) {
 
 function exportWorkout() {
 	var sWorkoutTitle = $(".workoutTitleText").text();
+	if (!sWorkoutTitle) {
+		sWorkoutTitle = "Untitled workout";
+	}
 	var re = /(\d\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
 	var workout = {
 		name: sWorkoutTitle,
