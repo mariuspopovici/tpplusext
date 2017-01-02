@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		html * {
+			font-family: Arial;
+		}
+		
+		small {
+			font-size: smaller;
+		}
+		
+		.button {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			padding: 10px 24px;
+		}
+	</style>
+</head>
+
+<body style="width: 400px">
+	<p><b><img src='icon32.png'> TP+ Export</b></p>
+
+	<form>
+		<fieldset>
+			<legend>Options</legend>
+			<p>
+				<label>Select export file format:</label>
+				<p>
+					<input type="radio" name="radFormat" id="MRC" value="MRC" checked="checked" />
+					<label for="MRC">MRC (TrainerRoad)</label>
+				</p>
+				<p>
+					<input type="radio" name="radFormat" id="ERG" value="ERG" />
+					<label for="ERG">ERG (Computrainer)</label>
+					<label for="FTP">FTP: </label>
+					<input type="number" name="txtFTP" id="FTP" value="300" width="30" size="3" placeholder="Enter a valid number" min="1" max="600">
+					<label for="FTP"> W</label>
+				</p>
+				<p>
+					<input type="radio" name="radFormat" id="ERG" value="ERG" disabled/>
+					<label for="ERG">ZWO (Zwift) Coming soon...</label>
+				</p>
+			</p>
+		</fieldset>
+		<p></p>
+		<button class="button" id="export">Export</button>
+	</form>
+
+
+	<div>
+		<p><small>© 2017 Marius Popovici (e-mail: tpplusext at gmail dot com)</small></p>
+	</div>
+
+	<p></p>
+
+	<div>
+		<small>
+			Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</small>
+	</div>
+
+	<script type="text/javascript" src="popup.js"></script>
+</body>
+
+</html>

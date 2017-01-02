@@ -1,0 +1,30 @@
+{
+	"name": "TP+",
+	"version": "0.0.0.1",
+	"description": "TP+ enhances your favorite training log and analysis software by exporting workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
+	"permissions": [
+    "activeTab", "<all_urls>"
+  ],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://app.trainingpeaks.com/*"],
+			"js": ["thirdparty/jquery-3.1.1.min.js", "thirdparty/FileSaver.min.js",
+						"thirdparty/jquery.alerts.js"],
+			"css": ["thirdparty/jquery.alerts.css"]
+    }
+  ],
+	"page_action": {
+		"default_popup": "popup.html",
+		"default_icon": "icon16.png"
+	},
+	"icons": {
+		"16": "icon16.png",
+		"32": "icon32.png",
+		"64": "icon64.png",
+		"128": "icon128.png"
+	},
+	"manifest_version": 2
+}
