@@ -33,22 +33,25 @@ def export(workout):
             return "";
 
 def export_MRC(workout):
-    content = ("[COURSE HEADER]\nVERSION = 2\nUNITS = ENGLISH\n"
-        "DESCRIPTION = $DESCRIPTION$\n"
-        "FILE NAME = $FILENAME$\n"
-        "MINUTES PERCENT\n[END COURSE HEADER]\n[COURSE DATA]\n");
+    content = ("[COURSE HEADER]\r\nVERSION = 2\r\nUNITS = ENGLISH\r\n"
+        "DESCRIPTION = $DESCRIPTION$\r\n"
+        "FILE NAME = $FILENAME$\r\n"
+        "MINUTES PERCENT\r\n[END COURSE HEADER]\r\n[COURSE DATA]\r\n");
 
     content = content.replace("$DESCRIPTION$", workout['name']);
     content = content.replace("$FILENAME$", workout['name'] + '.MRC');
 
+    stepTime = 0;
     for group in workout['groups']:
         for repeat in range(0, group['repeat']):
             for step in group['steps']:
+                content += str(stepTime) + "\t" + str(step['intensity']) + "\r\n";
                 duration = step['duration'];
                 if (step['timeUnits'] == "sec"):
                     duration = step['duration'] * 1/60;
                     duration = round(duration, 2);
-                content += str(duration) + " " + str(step['intensity']) + "\n";
+                stepTime = stepTime + duration;
+                content += str(stepTime) + "\t" + str(step['intensity']) + "\r\n";
 
     content += "[END COURSE DATA]";
 
@@ -64,17 +67,19 @@ def export_ERG(workout):
     content = content.replace("$FILENAME$", workout['name'] + '.ERG');
     content = content.replace("$FTP$", str(workout['FTP']));
 
+    stepTime = 0;
     for group in workout['groups']:
         for repeat in range(0, group['repeat']):
             for step in group['steps']:
+                wattage = int((step['intensity'] * workout['FTP']) / 100);
+                content += str(stepTime) + "\t" + str(wattage) + "\n";
                 duration = step['duration'];
                 if (step['timeUnits'] == "sec"):
                     duration = step['duration'] * 1/60;
                     duration = round(duration, 2);
-                wattage = int((step['intensity'] * workout['FTP']) / 100);
-                content += str(duration) + " " + str(wattage) + "\n";
+                stepTime = stepTime + duration;
+                content += str(stepTime) + "\t" + str(wattage) + "\n";
 
     content += "[END COURSE DATA]";
 
     return content;
-
