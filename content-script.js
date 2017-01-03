@@ -1,14 +1,14 @@
-if (fileFormat == 'undefined' || fileFormat == null) {
+if (fileFormat === 'undefined' || fileFormat === null) {
 	var fileFormat = "MRC";
 }
 
-if (FTP == 'undefined' || FTP == null) {
+if (FTP === 'undefined' || FTP === null) {
 	var FTP = 300;
 }
 
 var groupsElements = $(".stepSummary");
 
-if (groupsElements.length == 0) {
+if (groupsElements.length === 0) {
 	jAlert("Can't find any exportable workouts on current page!", 'TP+ Export Warning');
 } else {
 	exportWorkout();
@@ -19,13 +19,15 @@ function exportWorkout() {
 	if (!sWorkoutTitle) {
 		sWorkoutTitle = "Untitled workout";
 	}
-	var re = /(\d\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
-	var workout = {
+
+  var re = /(\d\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
+
+  var workout = {
 		name: sWorkoutTitle,
 		description: "",
 		groups: [],
 		FTP: FTP
-	}
+	};
 
 	for (var i = 0; i < groupsElements.length; i++) {
 		var groupElement = groupsElements[i];

@@ -1,21 +1,20 @@
 function go() {
 
+  var fileFormat = null, FTP = null;
+
+
 	if (document.getElementById('MRC').checked) {
-		var fileFormat = document.getElementById('MRC').value;
-		var FTP = null;
+		fileFormat = document.getElementById('MRC').value;
+		FTP = null;
 	} else if (document.getElementById('ERG').checked) {
-		var fileFormat = document.getElementById('ERG').value;
-		var FTP = document.getElementById('FTP').value;
+		fileFormat = document.getElementById('ERG').value;
+		FTP = document.getElementById('FTP').value;
 	} else if (document.getElementById('ZWO').checked) {
-		var fileFormat = document.getElementById('ZWO').value;
-		var FTP = null;
-	} else {
-		var fileFormat = null;
-		var FTP = null;
+		fileFormat = document.getElementById('ZWO').value;
+		FTP = null;
 	}
 
 	chrome.tabs.executeScript(null, {
-		//code: "var fileFormat = '" + fileFormat + "';"
 		code: "var fileFormat = '" + fileFormat + "';\nvar FTP=" + FTP + ";"
 	}, function () {
 		chrome.tabs.executeScript(null, {
