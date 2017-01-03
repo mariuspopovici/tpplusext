@@ -11,3 +11,7 @@ Zwift™ is an online cycling virtual training game complete with 3D graphics si
 
 ## How does TP+ work?
 A demo can be viewed here:[Youtube Video](https://www.youtube.com/watch?v=2uIED2I2JsQ)
+
+## How do I install it?
+
+Get TP+ on [Chrome Webstore](https://chrome.google.com/webstore/detail/tp%2B/lihenekdgdoddaljhfgohonmgmpfbjfc)
