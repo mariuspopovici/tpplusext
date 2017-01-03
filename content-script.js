@@ -85,7 +85,7 @@ function postWorkout(workout, fileFormat) {
 				var blob = new Blob([data.content], {
 					type: "text/plain;charset=utf-8"
 				});
-				saveAs(blob, workout.name + "." + fileFormat);
+				saveAs(blob, workout.name + "." + fileFormat.toLowerCase());
 			} else {
 				jAlert('TP+ Error: error calling remote API.', 'TP+ Export Error');
 			}
