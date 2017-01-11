@@ -1,7 +1,7 @@
 {
 	"name": "TP+",
-	"version": "0.0.0.1",
-	"description": "TP+ exports TP workout builder workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
+	"version": "0.0.0.3",
+	"description": "TP+ exports Training Peaks™ workout builder workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
 	"permissions": [
     "activeTab", "<all_urls>"
   ],
@@ -10,7 +10,7 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["http://app.trainingpeaks.com/*"],
+			"matches": ["http://app.trainingpeaks.com/*", "https://app.trainingpeaks.com/*"],
 			"js": ["thirdparty/jquery-3.1.1.min.js", "thirdparty/FileSaver.min.js",
 						"thirdparty/jquery.alerts.js"],
 			"css": ["thirdparty/jquery.alerts.css"]
@@ -26,5 +26,6 @@
 		"64": "icon64.png",
 		"128": "icon128.png"
 	},
-	"manifest_version": 2
+	"manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
