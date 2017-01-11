@@ -19,7 +19,7 @@ function exportWorkout() {
 	if (!sWorkoutTitle) {
 		sWorkoutTitle = "Untitled workout";
 	}
-	var re = /(\d\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
+	var re = /(\d+\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
 	var workout = {
 		name: sWorkoutTitle,
 		description: "",
