@@ -71,7 +71,7 @@ function postWorkout(workout, fileFormat) {
 	$.ajax({
 		type: "POST",
 		//the url where you want to sent the userName and password to
-		url: 'http://mariusp.pythonanywhere.com/export',
+		url: 'https://mariusp.pythonanywhere.com/export',
 		dataType: 'json',
 		contentType: "application/json",
 		async: true,
