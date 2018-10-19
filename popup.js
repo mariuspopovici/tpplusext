@@ -5,7 +5,7 @@ function go() {
 
 	if (document.getElementById('MRC').checked) {
 		fileFormat = document.getElementById('MRC').value;
-		FTP = null;
+		FTP = document.getElementById('FTP').value;
 	} else if (document.getElementById('ERG').checked) {
 		fileFormat = document.getElementById('ERG').value;
 		FTP = document.getElementById('FTP').value;

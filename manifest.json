@@ -1,7 +1,7 @@
 {
 	"name": "TP+",
-	"version": "0.0.0.5",
-	"description": "TP+ exports Training Peaks™ workout builder workouts to popular smart trainer software formats such as .MRC, .ERG or .ZWO",
+	"version": "0.0.0.7",
+	"description": "TP+ exports Training Peaks™ workout builder workouts to popular smart trainer software formats such as .MRC or .ERG",
 	"permissions": [
     "activeTab", "<all_urls>"
   ],

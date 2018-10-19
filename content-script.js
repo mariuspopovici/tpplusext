@@ -1,3 +1,5 @@
+
+
 if (fileFormat == 'undefined' || fileFormat == null) {
 	var fileFormat = "MRC";
 }
@@ -6,7 +8,7 @@ if (FTP == 'undefined' || FTP == null) {
 	var FTP = 300;
 }
 
-var groupsElements = $(".stepSummary");
+var groupsElements = $(".stepList");
 
 if (groupsElements.length == 0) {
 	jAlert("Can't find any exportable workouts on current page!", 'TP+ Export Warning');
@@ -15,11 +17,12 @@ if (groupsElements.length == 0) {
 }
 
 function exportWorkout() {
-	var sWorkoutTitle = $(".workoutTitleText").text();
+
+	var sWorkoutTitle = $(".workoutTitle").val();
 	if (!sWorkoutTitle) {
 		sWorkoutTitle = "Untitled workout";
 	}
-	var re = /(\d+\sx\s)?\d+\s(min|sec)\s@\s\d+\s%/igm;
+	var re = /(\d+\sx\s)?\d+\s(min|sec)\s@\s\d+\sW/igm;
 	var workout = {
 		name: sWorkoutTitle,
 		description: "",

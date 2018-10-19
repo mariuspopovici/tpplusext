@@ -33,6 +33,11 @@
 		<fieldset>
 			<legend>Options</legend>
 			<p>
+				<label for="FTP">FTP: </label>
+				<input type="number" name="txtFTP" id="FTP" value="300" width="30" size="3" placeholder="Enter a valid number" min="1" max="600">
+				<label for="FTP"> W</label>
+			</p>
+			<p>
 				<label>Select export file format:</label>
 				<p>
 					<input type="radio" name="radFormat" id="MRC" value="MRC" checked="checked" />
@@ -41,13 +46,6 @@
 				<p>
 					<input type="radio" name="radFormat" id="ERG" value="ERG" />
 					<label for="ERG">ERG (Computrainer)</label>
-					<label for="FTP">FTP: </label>
-					<input type="number" name="txtFTP" id="FTP" value="300" width="30" size="3" placeholder="Enter a valid number" min="1" max="600">
-					<label for="FTP"> W</label>
-				</p>
-				<p>
-					<input type="radio" name="radFormat" id="ERG" value="ERG" disabled/>
-					<label for="ERG">ZWO (Zwift) Coming soon...</label>
 				</p>
 			</p>
 		</fieldset>
